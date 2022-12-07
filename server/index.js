@@ -19,28 +19,26 @@ app.get("/", (req, res) => {
   res.json({ message: "Welcome to AAh_Sbitar application." });
 });
 
-
 db.mongoose
-.connect("mongodb://127.0.0.1:27017/sbitar2", {
-  useUnifiedTopology: true,
-  useNewUrlParser: true,
-})
+  .connect("mongodb://127.0.0.1:27017/sbitar2", {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+  })
   .then(() => {
     console.log("Successfully connect to MongoDB.");
     initial();
   })
-  .catch(err => {
+  .catch((err) => {
     console.error("Connection error", err);
     process.exit();
   });
-
 
 function initial() {
   Role.estimatedDocumentCount((err, count) => {
     if (!err && count === 0) {
       new Role({
-        name: "user"
-      }).save(err => {
+        name: "user",
+      }).save((err) => {
         if (err) {
           console.log("error", err);
         }
@@ -49,8 +47,8 @@ function initial() {
       });
 
       new Role({
-        name: "Receptionist"
-      }).save(err => {
+        name: "Receptionist",
+      }).save((err) => {
         if (err) {
           console.log("error", err);
         }
@@ -59,8 +57,8 @@ function initial() {
       });
 
       new Role({
-        name: "Doctor"
-      }).save(err => {
+        name: "Doctor",
+      }).save((err) => {
         if (err) {
           console.log("error", err);
         }
@@ -70,8 +68,8 @@ function initial() {
     }
   });
 }
-require('./routes/auth.routes')(app);
-require('./routes/user.routes')(app);
+require("./routes/auth.routes")(app);
+require("./routes/user.routes")(app);
 app.listen(PORT, function () {
   console.log(`Server run : http://localhost:${PORT}`);
 });
