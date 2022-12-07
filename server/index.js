@@ -20,10 +20,17 @@ app.get("/", (req, res) => {
 });
 
 db.mongoose
+<<<<<<< HEAD
   .connect("mongodb://127.0.0.1:27017/sbitar1", {
     useUnifiedTopology: true,
     useNewUrlParser: true,
   })
+=======
+.connect("mongodb://127.0.0.1:27017/sbitar2", {
+  useUnifiedTopology: true,
+  useNewUrlParser: true,
+})
+>>>>>>> aa155dabf02a48b8415595ffebdf3533ac316205
   .then(() => {
     console.log("Successfully connect to MongoDB.");
     initial();
