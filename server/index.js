@@ -21,7 +21,7 @@ app.get("/", (req, res) => {
 
 
 db.mongoose
-.connect("mongodb://127.0.0.1:27017/sbitar1", {
+.connect("mongodb://127.0.0.1:27017/sbitar2", {
   useUnifiedTopology: true,
   useNewUrlParser: true,
 })
