@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-
+import React, { Component} from "react";
+import "./home.css"
 import UserService from "../services/user.service";
 
 export default class Home extends Component {
@@ -31,11 +31,24 @@ export default class Home extends Component {
 
   render() {
     return (
-      <div className="container">
-        <header className="jumbotron">
-          <h3>{this.state.content}</h3>
-        </header>
+       
+      
+      <div style={{
+        
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '90vh',
+        
+      }}>
+        <h2>Search for Doctor</h2>
+      <form className="search" action="action_page.php">
+      
+        <input type="text" placeholder="Find a Doctor..." name="search" />
+        
+        <button type="submit"><i className="fa fa-search">Search</i></button>
+      </form>
       </div>
-    );
+     );
   }
 }
