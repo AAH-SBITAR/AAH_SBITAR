@@ -7,15 +7,17 @@ import Update_Doctor from "./Update_Doctor";
 var Doctor = () => {
   const [doctor, setDoctor] = useState({});
   const [up, setUp] = useState(false);
-
+ 
   const currentUser = AuthService.getCurrentUser();
 
   useEffect(() => {
-     axios.get(`http://localhost:3000/getOne/${currentUser.id}`).then((res) => {
+      axios.get(`http://localhost:3000/getOne/${currentUser.id}`).then((res) => {
      
        setDoctor(res.data);
        console.log(res);
-    });
+       
+
+    }).catch(err=>console.log(err));
   }, []);
 
   return (
