@@ -2,6 +2,9 @@ const express = require("express");
 //const db = require("./config/db");
 const db = require("./models");
 
+
+const User =db.user;
+const Patient = db.patient;
 const Role = db.role;
 const cors = require("cors");
 require("dotenv").config();
@@ -15,32 +18,70 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 // simple route
+
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to AAh_Sbitar application." });
+
+  // Get All Doctors 
+
+app.get("/getAll", async (req, res) => {
+
+ try{ let data = await User.find();
+  res.send(data);
+}
+catch(error){
+  res.status(400).json({ message: "something went wrong" });
+  console.log(error);
+}
 });
 
 
-db.mongoose
-.connect("mongodb://127.0.0.1:27017/sbitar2", {
-  useUnifiedTopology: true,
-  useNewUrlParser: true,
+// Get one doctor by id
+
+app.get("/getOne/:id", async (req, res) => {
+ try{ let data = await User.findOne({_id : req.params.id});
+  res.send(data);
+}
+catch(error){
+  res.status(400).json({ message: "something went wrong" });
+  console.log(error);
+}
+});
+//Update Doctor By Id
+
+app.put("/updateDoctor/:id", async (req, res) => {
+  try {
+    await User.findOneAndUpdate({ _id: req.params.id }, req.body);
+    res.status(201).json({ message: "User updated successfully" })
+  } catch (error) {
+    res.status(400).json({ message: "something went wrong" });
+    console.log(error);
+  }
 })
+
+
+});
+
+db.mongoose
+  .connect("mongodb://127.0.0.1:27017/sbitar2", {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+  })
   .then(() => {
     console.log("Successfully connect to MongoDB.");
     initial();
   })
-  .catch(err => {
+  .catch((err) => {
     console.error("Connection error", err);
     process.exit();
   });
-
 
 function initial() {
   Role.estimatedDocumentCount((err, count) => {
     if (!err && count === 0) {
       new Role({
-        name: "user"
-      }).save(err => {
+        name: "user",
+      }).save((err) => {
         if (err) {
           console.log("error", err);
         }
@@ -49,8 +90,8 @@ function initial() {
       });
 
       new Role({
-        name: "Receptionist"
-      }).save(err => {
+        name: "Receptionist",
+      }).save((err) => {
         if (err) {
           console.log("error", err);
         }
@@ -59,8 +100,8 @@ function initial() {
       });
 
       new Role({
-        name: "Doctor"
-      }).save(err => {
+        name: "Doctor",
+      }).save((err) => {
         if (err) {
           console.log("error", err);
         }
@@ -70,8 +111,29 @@ function initial() {
     }
   });
 }
-require('./routes/auth.routes')(app);
-require('./routes/user.routes')(app);
+// app.get("/allPat", async (req, res) => {
+//   try {
+//     let data = await Patient.find();
+//     res.send(data);
+//   } catch (error) {
+//     res.status(400).json({ message: "something went wrong" });
+//     console.log(error);
+//   }
+// });
+// app.post("/addPat", async (req, res) => {
+//   try {
+//     await Patient.create(req.body);
+//     res.send("yey");
+//   } catch (error) {
+//     res.status(400).json({ message: "something went wrong" });
+//     console.log(error);
+//   }
+// });
+
+require("./routes/auth.routes")(app);
+require("./routes/user.routes")(app);
+require("./routes/patient.routes")(app);
+
 app.listen(PORT, function () {
-  console.log(`Server run : http://localhost:${PORT}`);
+console.log(`Server run : http://localhost:${PORT}`);
 });

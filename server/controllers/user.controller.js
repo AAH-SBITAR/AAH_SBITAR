@@ -12,4 +12,5 @@ exports.allAccess = (req, res) => {
   
   exports.receptionistBoard = (req, res) => {
     res.status(200).send("receptionist Content.");
+    
   };

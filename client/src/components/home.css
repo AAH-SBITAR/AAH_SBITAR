@@ -1,0 +1,183 @@
+.card {
+    margin-left: 20px;
+    margin-top: 20px;
+    font-size: 20px;
+    letter-spacing: normal;
+    word-spacing: normal;
+    background-color: transparent;
+    border: 1px solid transparent;
+    background-color: rgb(188, 185, 160);
+    border-radius: 4px;
+    padding: 20px 40px 10px 40px;
+    /* width: 500px; */
+    
+}
+
+body {
+    background-color: aliceblue;
+    height: 100%;
+}
+
+body,
+html {
+    height: 100%;
+}
+
+
+.container {
+    padding: 2px 16px;
+
+    
+}
+
+.home {
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    letter-spacing: normal;
+    word-spacing: normal;
+
+
+    border: 1px solid #eea0a069;
+    background-color: rgb(250, 244, 244);
+    border-radius: 4px;
+    padding: 20px 40px 10px 40px;
+
+    background-image: url("https://media.istockphoto.com/id/1227177907/fr/photo/lit-dans-le-couloir-le-concept-denvironnement-stressant-de-travail.jpg?s=612x612&w=0&k=20&c=4PnKZhbrUWzZnMGkip7NrIMzKWo1UVUebWk0QNhCzm8=");
+}
+
+p {
+    font-size: 14px;
+    
+    margin-top: 20px;
+}
+
+.smoke {
+    text-align: center;
+}
+
+.button {
+    background-color: #008CBA;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button1 {
+    background-color: #f44336;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.holder {
+    margin: 10px 10px;
+    margin-left: 30px;
+    padding: 10px 10px 10px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* loginform CSS */
+
+.Auth-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 80vh;
+}
+
+.Auth-form {
+    width: 420px;
+    box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    border-radius: 8px;
+    background-color: white;
+}
+
+.Auth-form-content {
+    padding-left: 12%;
+    padding-right: 12%;
+}
+
+.Auth-form-title {
+    text-align: center;
+    margin-bottom: 1em;
+    font-size: 24px;
+    color: rgb(34, 34, 34);
+    font-weight: 800;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgb(34, 34, 34);
+}
+
+/* loginform CSS */
+.login {
+    margin-left: 980px
+}
+
+*{
+    box-sizing: border-box;
+  }
+  
+  /* Style the search field */
+  form.search input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: center;
+    
+    background: #f1f1f1;
+  }
+  
+  /* Style the submit button */
+  form.search button {
+    float: center;
+   
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+  }
+  
+  form.search button:hover {
+    background: #0b7dda;
+  }
+  
+  /* Clear floats */
+  form.search::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
