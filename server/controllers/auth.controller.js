@@ -100,7 +100,7 @@ exports.signin = (req, res) => {
       var authorities = [];
 
       for (let i = 0; i < user.roles.length; i++) {
-        authorities.push(user.roles[i].name.toUpperCase());
+        authorities.push (user.roles[i].name.toUpperCase());
       }
       res.status(200).send({
         id: user._id,
@@ -108,6 +108,7 @@ exports.signin = (req, res) => {
         email: user.email,
         roles: authorities,
         accessToken: token,
+
       });
     });
 };

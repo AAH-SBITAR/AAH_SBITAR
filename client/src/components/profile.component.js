@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Navigate } from "react-router-dom";
 import AuthService from "../services/auth.service";
+import axios from "axios"
 
 export default class Profile extends Component {
   constructor(props) {
@@ -9,8 +10,18 @@ export default class Profile extends Component {
     this.state = {
       redirect: null,
       userReady: false,
-      currentUser: { username: "" }
+      currentUser: { username: "" },
+      data:{}
     };
+
+    axios.get('http://localhost:3000/getOne')
+    .then(function (response) {
+      console.log(response.data)
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  
   }
 
   componentDidMount() {
@@ -20,12 +31,15 @@ export default class Profile extends Component {
     this.setState({ currentUser: currentUser, userReady: true })
   }
 
+
+
   render() {
     if (this.state.redirect) {
       return <Navigate to={this.state.redirect} />
     }
 
     const { currentUser } = this.state;
+    console.log(currentUser,"aaaaaaaaa");
 
     return (
       <div className="container">
@@ -48,6 +62,10 @@ export default class Profile extends Component {
         <p>
           <strong>Email:</strong>{" "}
           {currentUser.email}
+        </p>
+        <p>
+          <strong>speciality:</strong>{" "}
+          {currentUser.speciality}
         </p>
         <strong>Authorities:</strong>
         <ul>

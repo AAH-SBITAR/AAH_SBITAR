@@ -12,6 +12,7 @@ import Profile from "./components/profile.component";
 import BoardUser from "./components/Board-User";
 import BoardModerator from "./components/Board-Receptionist";
 import Doctor from "./components/Board-Doctor";
+import Profile_Doctor from "./components/Profile_Doctor.jsx";
 
 class App extends Component {
   constructor(props) {
@@ -123,7 +124,7 @@ class App extends Component {
             <Route path="/home" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/profile" element={<Profile />} />
+            <Route path="/profile" element={<Profile_Doctor />} />
             <Route path="/user" element={<BoardUser />} />
             <Route path="/recept" element={<BoardModerator />} />
             <Route path="/doct" element={<Doctor />} />
