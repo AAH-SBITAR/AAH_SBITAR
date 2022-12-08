@@ -11,7 +11,7 @@ import Home from "./components/home.component";
 import AboutUs from "./components/AboutUs";
 import Profile from "./components/profile.component";
 import BoardUser from "./components/Board-User";
-import BoardModerator from "./components/Board-Receptionist";
+import Receptionist from "./components/Board-Receptionist";
 import Doctor from "./components/Board-Doctor";
 
 class App extends Component {
@@ -32,7 +32,7 @@ class App extends Component {
     if (user) {
       this.setState({
         currentUser: user,
-        showReceptionistBoard: user.roles.includes("RECEPCIONIST"),
+        showReceptionistBoard: user.roles.includes("RECEPTIONIST"),
         showDoctorBoard: user.roles.includes("DOCTOR"),
       });
     }
@@ -54,7 +54,7 @@ class App extends Component {
       <div className="home"style={{ height: "100%" }}>
         <nav className="navbar navbar-expand navbar-dark bg-dark">
           <Link to={"/"} className="navbar-brand">
-             AAH_Sbitar
+            AAH_Sbitar
           </Link>
           <div className="navbar-nav mr-auto">
             <li className="nav-item">
@@ -101,7 +101,7 @@ class App extends Component {
             <div className="navbar-nav ml-auto">
               <li className="nav-item">
                 <Link to={"/profile"} className="nav-link">
-                WELCOME {currentUser.roles}  {currentUser.username}
+                  WELCOME {currentUser.roles} {currentUser.username}
                 </Link>
               </li>
               <li className="nav-item">
@@ -136,7 +136,7 @@ class App extends Component {
             <Route path="/register" element={<Register />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/user" element={<BoardUser />} />
-            <Route path="/recept" element={<BoardModerator />} />
+            <Route path="/recept" element={<Receptionist />} />
             <Route path="/doct" element={<Doctor />} />
           </Routes>
         </div>
