@@ -1,7 +1,7 @@
 const express = require("express");
 //const db = require("./config/db");
 const db = require("./models");
-
+const Patient = db.patient;
 const Role = db.role;
 const cors = require("cors");
 require("dotenv").config();
@@ -68,8 +68,29 @@ function initial() {
     }
   });
 }
+// app.get("/allPat", async (req, res) => {
+//   try {
+//     let data = await Patient.find();
+//     res.send(data);
+//   } catch (error) {
+//     res.status(400).json({ message: "something went wrong" });
+//     console.log(error);
+//   }
+// });
+// app.post("/addPat", async (req, res) => {
+//   try {
+//     await Patient.create(req.body);
+//     res.send("yey");
+//   } catch (error) {
+//     res.status(400).json({ message: "something went wrong" });
+//     console.log(error);
+//   }
+// });
+
 require("./routes/auth.routes")(app);
 require("./routes/user.routes")(app);
+require("./routes/patient.routes")(app);
+
 app.listen(PORT, function () {
   console.log(`Server run : http://localhost:${PORT}`);
 });
