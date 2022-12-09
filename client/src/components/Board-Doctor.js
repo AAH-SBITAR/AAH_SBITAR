@@ -4,7 +4,6 @@ import OnePatientSearched from "./OnePatientSearched";
 import PatientList from "./PatientList";
 import Search from "./Search";
 
-
 function Receptionist() {
   const [view, setView] = useState("patients");
   const [onePatient, setOnePatient] = useState({});
