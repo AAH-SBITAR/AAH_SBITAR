@@ -5,10 +5,16 @@ import { useState } from "react";
 
 function OnePatient(props) {
  
-  
-    return <div>
-      <li>{props.patient.name}</li>
-  </div>;
+    return (
+      <tr onClick={() => {
+        props.setView("one")
+     props.setOnePatient(props.patient);}}>
+          <th scope="row">{props.patient.IDcard}</th>
+          <td >{props.patient.name}</td>
+          <td >{props.patient.age}</td>
+          <td >@{props.patient.nextRDV}</td>
+        </tr>
+    );
 }
 
 export default OnePatient;

@@ -3,7 +3,7 @@
     margin-top: 20px;
     font-size: 20px;
     letter-spacing: normal;
-    word-spacing: normal;
+    word-spacing: normal; 
     background-color: transparent;
     border: 1px solid transparent;
     background-color: rgb(188, 185, 160);
@@ -180,4 +180,9 @@ label {
     content: "";
     clear: both;
     display: table;
+  }
+
+  .blur{
+background-color: rgba(209, 227, 234, 0.5); /* 50% transparent */
+
   }

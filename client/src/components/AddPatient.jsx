@@ -35,7 +35,7 @@ function AddPatient() {
   };
 
   return (
-    <div class="border" >
+    <div>
       AddPatient
       <div className="container">
         <form onSubmit={submitHundler}>
@@ -129,7 +129,7 @@ function AddPatient() {
             />
           </div>
 
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn btn-outline-primary">
             Submit
           </button>
         </form>
