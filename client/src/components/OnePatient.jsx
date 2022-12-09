@@ -1,7 +1,6 @@
 import axios from "axios";
 import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect ,useState } from "react";
 
 function OnePatient(props) {
  
@@ -12,7 +11,7 @@ function OnePatient(props) {
           <th scope="row">{props.patient.IDcard}</th>
           <td >{props.patient.name}</td>
           <td >{props.patient.age}</td>
-          <td >@{props.patient.nextRDV}</td>
+          <td >{props.patient.nextRDV_2}</td>
         </tr>
     );
 }
