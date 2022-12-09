@@ -13,6 +13,7 @@
     
 }
 
+
 body {
     background-color: aliceblue;
     height: 100%;
@@ -26,6 +27,7 @@ html {
 
 .container {
     padding: 2px 16px;
+    
 
     
 }
@@ -181,3 +183,46 @@ label {
     clear: both;
     display: table;
   }
+
+  .PDoct_div{
+    background-color: rgb(203, 199, 199);
+   font-family:Verdana;
+    width: 350px;
+    height: 600px;
+    top: 50%;
+    left: 50%;
+    transform: translate(90%,2%);
+    
+  }
+
+  .spe{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+  }
+  .prof-image{
+
+    height:300px;
+    width:290px;
+   margin-left:-10px ;
+    
+
+  }
+  .but_update{
+    display: inline-block;
+    outline: 0;
+    border: 0;
+    margin-left : 90px;
+    cursor: pointer;
+    will-change: box-shadow,transform;
+    background: radial-gradient( 100% 100% at 100% 0%, #363737 0%, #232326 100% );
+    box-shadow: 0px 2px 4px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px rgb(58 65 111 / 50%);
+    padding: 0 32px;
+    border-radius: 6px;
+    color: #fff;
+    height: 34px;
+    font-size: 18px;
+    text-shadow: 0 1px 0 rgb(0 0 0 / 40%);
+    transition: box-shadow 0.15s ease,transform 0.15s ease;}
+    
+
+    
+  

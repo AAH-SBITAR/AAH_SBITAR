@@ -15,6 +15,7 @@ import Receptionist from "./components/Board-Receptionist";
 import Doctor from "./components/Board-Doctor";
 import Profile_Doctor from "./components/Profile_Doctor.jsx";
 
+
 class App extends Component {
   constructor(props) {
     super(props);
