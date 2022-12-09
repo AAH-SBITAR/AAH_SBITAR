@@ -67,7 +67,7 @@ export default class Register extends Component {
     this.state = {
       username: "",
       email: "",
-      roles:[],
+      roles: [],
       password: "",
       successful: false,
       message: ""
@@ -87,7 +87,7 @@ export default class Register extends Component {
   }
 
   onChangeRole(e) {
-    let arr=[]
+    let arr = []
     arr.push(e.target.value)
     this.setState({
       roles: arr
@@ -183,14 +183,12 @@ export default class Register extends Component {
                 </div>
                 <div className="form-group">
                   <label htmlFor="role">Role</label>
-                  <Input
-                    type="text"
-                    className="form-control"
-                    name="role"
-                    value={this.state.roles}
-                    onChange={this.onChangeRole}
-                    validations={[required]}
-                  />
+                  <select class="form-control" name="Role" onChange={this.onChangeRole} validations={[required]} >
+                    <option>Role</option>
+                    <option>Doctor</option>
+                    <option>Receptionist</option>
+
+                  </select>
                 </div>
 
                 <div className="form-group">

@@ -9,11 +9,13 @@ import Login from "./components/login.component";
 import Register from "./components/register.component";
 import Home from "./components/home.component";
 import AboutUs from "./components/AboutUs";
+import AllDoctors from "./components/AllDoctors";
 import Profile from "./components/profile.component";
 import BoardUser from "./components/Board-User";
 import Receptionist from "./components/Board-Receptionist";
 import Doctor from "./components/Board-Doctor";
 import Profile_Doctor from "./components/Profile_Doctor.jsx";
+
 
 class App extends Component {
   constructor(props) {
@@ -64,13 +66,21 @@ class App extends Component {
               </Link>
             </li>
            
-            {!showDoctorBoard && (
+            {!showDoctorBoard && !showReceptionistBoard &&(
             <li className="nav-item">
               <Link to={"/aboutUs"} className="nav-link">
                 AboutUs
               </Link>
             </li>
             )}
+
+            {!showDoctorBoard && (
+            <li className="nav-item">
+              <Link to={"/doctors"} className="nav-link">
+                Doctors
+              </Link>
+            </li>
+            )}  
             
       
             {showReceptionistBoard && (
@@ -98,9 +108,10 @@ class App extends Component {
             )}
           </div>
 
+          
           {currentUser ? (
-            <div className="navbar-nav ml-auto">
-              <li className="nav-item">
+            <div className="navbar-nav ml-auto" >
+              <li className="nav-item" >
                 <Link to={"/profile"} className="nav-link">
                   WELCOME {currentUser.roles} {currentUser.username}
                 </Link>
@@ -133,6 +144,7 @@ class App extends Component {
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/aboutUs" element={<AboutUs/>} />
+            <Route path="/doctors" element={<AllDoctors/>}/>
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/profile" element={<Profile_Doctor />} />

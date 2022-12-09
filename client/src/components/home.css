@@ -2,16 +2,20 @@
     margin-left: 20px;
     margin-top: 20px;
     font-size: 20px;
+    display: flex;
+    flex-wrap:wrap;
+    display:grid ;
     letter-spacing: normal;
     word-spacing: normal; 
     background-color: transparent;
     border: 1px solid transparent;
-    background-color: rgb(188, 185, 160);
+    background-color: rgb(188, 185, 160,0.4)  ;
     border-radius: 4px;
-    padding: 20px 40px 10px 40px;
+    padding: 20px 40px 20px 40px;
     /* width: 500px; */
     
 }
+
 
 body {
     background-color: aliceblue;
@@ -26,6 +30,7 @@ html {
 
 .container {
     padding: 2px 16px;
+    
 
     
 }
@@ -49,7 +54,7 @@ html {
     border-radius: 4px;
     padding: 20px 40px 10px 40px;
 
-    background-image: url("https://media.istockphoto.com/id/1227177907/fr/photo/lit-dans-le-couloir-le-concept-denvironnement-stressant-de-travail.jpg?s=612x612&w=0&k=20&c=4PnKZhbrUWzZnMGkip7NrIMzKWo1UVUebWk0QNhCzm8=");
+    background-image: url("https://img.freepik.com/fotos-premium/retrato-de-medicos-felizes_107420-19562.jpg?w=2000");
 }
 
 p {
@@ -182,6 +187,65 @@ label {
     display: table;
   }
 
+  .mapouter{position:center;text-align:center;width:600px;height:400px;}
+  .gmap_canvas {overflow:hidden;background:none!important;width:600px;height:400px;}
+  .gmap_iframe {width:600px!important;height:400px!important;}
+
+  .fa-phone:before {
+    content: "\f095";
+}
+.fa-envelope:before {
+    content: "\f0e0";
+   
+}
+*:before{
+    box-sizing: "border-box";
+}
+  .PDoct_div{
+    background-color: rgb(223, 210, 210,0.5);
+    border: 1px solid grey ;
+    border-radius: 4px;
+   font-family:Verdana;
+    width: 350px;
+    height: 600px;
+    top: 50%;
+    left: 50%;
+    transform: translate(90%,2%);
+    
+  }
+
+  .spe{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+  }
+  .prof-image{
+
+    height:300px;
+    width:290px;
+   margin-left:-10px ;
+   border-radius: 10px;
+    
+
+  }
+  .but_update{
+    display: inline-block;
+    outline: 0;
+    border: 0;
+    margin-left : 90px;
+    cursor: pointer;
+    will-change: box-shadow,transform;
+    background: radial-gradient( 100% 100% at 100% 0%, #363737 0%, #232326 100% );
+    box-shadow: 0px 2px 4px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px rgb(58 65 111 / 50%);
+    padding: 0 32px;
+    border-radius: 6px;
+    color: #fff;
+    height: 34px;
+    font-size: 18px;
+    text-shadow: 0 1px 0 rgb(0 0 0 / 40%);
+    transition: box-shadow 0.15s ease,transform 0.15s ease;}
+    
+
+    
+  
   .blur{
 background-color: rgba(209, 227, 234, 0.5); /* 50% transparent */
 
