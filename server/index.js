@@ -47,6 +47,19 @@ catch(error){
   console.log(error);
 }
 });
+
+//Get one doctor by name
+
+app.get("/getOneByName", async (req, res) => {
+  try{ let data = await User.findOne({username : req.body.username});
+   res.send(data);
+ }
+ catch(error){
+   res.status(400).json({ message: "something went wrong" });
+   console.log(error);
+ }
+ });
+
 //Update Doctor By Id
 
 app.put("/updateDoctor/:id", async (req, res) => {

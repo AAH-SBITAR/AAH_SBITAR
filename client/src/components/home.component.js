@@ -1,37 +1,26 @@
-import React, { Component} from "react";
+import React, { useState, useEffect} from "react";
 import "./home.css"
 import UserService from "../services/user.service";
 
-export default class Home extends Component {
-  constructor(props) {
-    super(props);
+ function Home (){
+  const [content, setContent] = useState("")
+  const [search, setSearch] = useState("")
 
-    this.state = {
-      content: ""
-    };
-  }
-
-  componentDidMount() {
-    UserService.getPublicContent().then(
+    useEffect(() => {
+       UserService.getPublicContent().then(
       response => {
-        this.setState({
-          content: response.data
-        });
+        setContent(response.data);
       },
       error => {
-        this.setState({
-          content:
+        setContent(
             (error.response && error.response.data) ||
             error.message ||
             error.toString()
-        });
-      }
-    );
-  }
+        );
+    })
+ }, []);
 
-  render() {
     return (
-       
       
       <div style={{
         
@@ -50,5 +39,7 @@ export default class Home extends Component {
       </form>
       </div>
      );
-  }
+  
 }
+
+export default Home;
