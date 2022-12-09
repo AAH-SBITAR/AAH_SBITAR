@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import AddPatient from "./AddPatient";
+import OnePatientSearched from "./OnePatientSearched";
 import PatientList from "./PatientList";
 import Search from "./Search";
 
 
 function Receptionist() {
-  const [check, setCheck] = useState(false)
   const [view, setView] = useState("patients");
+  const [onePatient, setOnePatient] = useState({});
   return (
     <div>
       <nav className="navbar navbar-light bg-light justify-content-between">
@@ -46,25 +47,21 @@ function Receptionist() {
             </li>
           </ul>
         </div>
-        <form className="form-inline">
-          <input
-            className="form-control mr-sm-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button
-            className="btn btn-outline-success my-2 my-sm-0"
-            type="submit"
-          >
-            Search
-          </button>
-        </form>
       </nav>
-      {view === "patients" && <PatientList />}
-
-      {view === "add" && <AddPatient />}
-      {view === "search" && <Search />}
+      <div
+        className="border blur"
+        style={{
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        {view === "patients" && (
+          <PatientList setView={setView} setOnePatient={setOnePatient} />
+        )}
+        {view === "add" && <AddPatient />}
+        {view === "search" && <Search />}
+        {view === "one" && <OnePatientSearched onePatient={onePatient} />}
+      </div>
     </div>
   );
 }

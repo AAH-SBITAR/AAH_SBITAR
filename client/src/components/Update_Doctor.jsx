@@ -44,22 +44,22 @@ function Update_Doctor({doctor , setUp}) {
         <div className="container">
             <form onSubmit={submitHundler}>
                 <div class="form-group">
-                    <label for="name">Name</label>
+                    <label for="name">Name:</label>
                     <input type="text" class="form-control" name="username" placeholder="Enter your Name" onChange={onchangeHandler} defaultValue={doctor.username} />
                 </div>
                 <div class="form-group">
-                    <label for="phone">Phone</label>
+                    <label for="phone">Phone:</label>
                     <input type="text" class="form-control" name="phone" placeholder="Enter your phone number" onChange={onchangeHandler} defaultValue={doctor.phone} />
                 </div>
                 <div class="form-group">
-                    <label for="speciality">Speciality</label>
+                    <label for="speciality">Speciality:</label>
                     <input type="text" class="form-control" name="speciality" placeholder="Enter your  speciality " onChange={onchangeHandler} defaultValue={doctor.speciality} />
                 </div>
        
                
                 <div class="form-group">
-                    <label for="image">Image</label>
-                    <input type="text" class="form-control" name="image" placeholder="Enter your movie image url" onChange={onchangeHandler} defaultValue={data.image} />
+                    <label for="image">Image:</label>
+                    <input type="text" class="form-control" name="image" placeholder="Enter your movie image url" onChange={onchangeHandler} defaultValue={doctor.image} />
                 </div>
                 
 
