@@ -2,13 +2,16 @@
     margin-left: 20px;
     margin-top: 20px;
     font-size: 20px;
+    display: flex;
+    flex-wrap:wrap;
+    display:grid ;
     letter-spacing: normal;
     word-spacing: normal; 
     background-color: transparent;
     border: 1px solid transparent;
-    background-color: rgb(188, 185, 160);
+    background-color: rgb(188, 185, 160,0.4)  ;
     border-radius: 4px;
-    padding: 20px 40px 10px 40px;
+    padding: 20px 40px 20px 40px;
     /* width: 500px; */
     
 }
@@ -51,7 +54,7 @@ html {
     border-radius: 4px;
     padding: 20px 40px 10px 40px;
 
-    background-image: url("https://media.istockphoto.com/id/1227177907/fr/photo/lit-dans-le-couloir-le-concept-denvironnement-stressant-de-travail.jpg?s=612x612&w=0&k=20&c=4PnKZhbrUWzZnMGkip7NrIMzKWo1UVUebWk0QNhCzm8=");
+    background-image: url("https://img.freepik.com/fotos-premium/retrato-de-medicos-felizes_107420-19562.jpg?w=2000");
 }
 
 p {
@@ -184,6 +187,20 @@ label {
     display: table;
   }
 
+  .mapouter{position:center;text-align:center;width:600px;height:400px;}
+  .gmap_canvas {overflow:hidden;background:none!important;width:600px;height:400px;}
+  .gmap_iframe {width:600px!important;height:400px!important;}
+
+  .fa-phone:before {
+    content: "\f095";
+}
+.fa-envelope:before {
+    content: "\f0e0";
+   
+}
+*:before{
+    box-sizing: "border-box";
+}
   .PDoct_div{
     background-color: rgb(203, 199, 199);
    font-family:Verdana;
