@@ -2,16 +2,18 @@ import React, { Component } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-
+import "./components/home.css"
 import AuthService from "./services/auth.service";
 
 import Login from "./components/login.component";
 import Register from "./components/register.component";
 import Home from "./components/home.component";
+import AboutUs from "./components/AboutUs";
 import Profile from "./components/profile.component";
 import BoardUser from "./components/Board-User";
 import Receptionist from "./components/Board-Receptionist";
 import Doctor from "./components/Board-Doctor";
+import Profile_Doctor from "./components/Profile_Doctor.jsx";
 
 class App extends Component {
   constructor(props) {
@@ -50,18 +52,27 @@ class App extends Component {
     const { currentUser, showReceptionistBoard, showDoctorBoard } = this.state;
 
     return (
-      <div>
+      <div className="home"style={{ height: "100%" }}>
         <nav className="navbar navbar-expand navbar-dark bg-dark">
           <Link to={"/"} className="navbar-brand">
             AAH_Sbitar
           </Link>
           <div className="navbar-nav mr-auto">
             <li className="nav-item">
-              <Link to={"/home"} className="nav-link">
+              <Link to={"/home"} className="nav-link" >
                 Home
               </Link>
             </li>
-
+           
+            {!showDoctorBoard && (
+            <li className="nav-item">
+              <Link to={"/aboutUs"} className="nav-link">
+                AboutUs
+              </Link>
+            </li>
+            )}
+            
+      
             {showReceptionistBoard && (
               <li className="nav-item">
                 <Link to={"/recept"} className="nav-link">
@@ -121,9 +132,10 @@ class App extends Component {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
+            <Route path="/aboutUs" element={<AboutUs/>} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/profile" element={<Profile />} />
+            <Route path="/profile" element={<Profile_Doctor />} />
             <Route path="/user" element={<BoardUser />} />
             <Route path="/recept" element={<Receptionist />} />
             <Route path="/doct" element={<Doctor />} />
