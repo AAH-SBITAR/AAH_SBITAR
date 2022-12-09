@@ -202,7 +202,9 @@ label {
     box-sizing: "border-box";
 }
   .PDoct_div{
-    background-color: rgb(203, 199, 199);
+    background-color: rgb(223, 210, 210,0.5);
+    border: 1px solid grey ;
+    border-radius: 4px;
    font-family:Verdana;
     width: 350px;
     height: 600px;
@@ -220,6 +222,7 @@ label {
     height:300px;
     width:290px;
    margin-left:-10px ;
+   border-radius: 10px;
     
 
   }
