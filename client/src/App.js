@@ -108,6 +108,7 @@ class App extends Component {
             )}
           </div>
 
+          
           {currentUser ? (
             <div className="navbar-nav ml-auto" >
               <li className="nav-item" >

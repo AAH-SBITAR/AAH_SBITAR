@@ -5,7 +5,7 @@ import PatientList from "./PatientList";
 import Search from "./Search";
 
 
-function Receptionist() {
+function BoardDoctor() {
   const [view, setView] = useState("patients");
   const [onePatient, setOnePatient] = useState({});
   return (
@@ -53,4 +53,4 @@ function Receptionist() {
   );
 }
 
-export default Receptionist;
+export default BoardDoctor;
