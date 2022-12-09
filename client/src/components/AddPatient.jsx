@@ -8,6 +8,7 @@ function AddPatient() {
   const [Asthma, setAsthma] = useState(false);
   const [heart, setHeart] = useState(false);
   const [cancer, setCancer] = useState(false);
+  // const [date,setDate] = new Date().toLocaleString()
 
   const onchangeHandler = (e) => {
     setForm({
@@ -35,7 +36,7 @@ function AddPatient() {
   };
 
   return (
-    <div class="border" >
+    <div>
       AddPatient
       <div className="container">
         <form onSubmit={submitHundler}>
@@ -81,6 +82,17 @@ function AddPatient() {
               onChange={onchangeHandler}
             />
           </div>
+
+          <div className="form-group">
+            <label htmlFor="number">Appointement</label>
+            <input
+              type="date"
+              className="form-control"
+              name="nextRDV_2"
+              onChange={onchangeHandler}
+            />
+          </div>
+
 
           <div className="form-group">
             <label htmlFor="chronic">chronic disease</label>
@@ -129,7 +141,7 @@ function AddPatient() {
             />
           </div>
 
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn btn-outline-primary">
             Submit
           </button>
         </form>
