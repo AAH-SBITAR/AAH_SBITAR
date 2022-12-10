@@ -19,10 +19,10 @@ function AllDoctors() {
 
 
     return (
-        <div>
-            <div class="d-flex justify-content-between mb-3">
+        <div class="container mt-5 mb-5 ">
+            <div class="d-flex justify-content-between mb-3 ">
 
-                <span>Doctors</span>
+                <h2>Doctors</h2>
 
 
             </div>
@@ -30,17 +30,17 @@ function AllDoctors() {
 
                 return (
 
-                    <div class="container mt-5 mb-5">
+                  
 
                         <div class="row g-2">
 
-                            <div class="col-md-3">
+                            <div class="col-md-3 ">
 
-                                <div class="card p-2 py-3 text-center">
+                                <div class="card p-2 py-3 text-center ">
 
                                     <div class="img mb-2">
 
-                                        <img src="https://i.imgur.com/LohyFIN.jpg" width="70" class="rounded-circle" />
+                                        <img src={e.image}width="70" class="rounded-circle" />
 
                                     </div>
 
@@ -59,7 +59,7 @@ function AllDoctors() {
 
                                     <div class="mt-4 apointment">
 
-                                        <button class="btn btn-success text-uppercase">
+                                        <button class="btn text-uppercase">
                                         <a href="mailto:abc@example.com?subject = Feedback&body = Message">
                                             Book Appointment
                                         </a></button>
@@ -70,7 +70,7 @@ function AllDoctors() {
                             </div>
 
                         </div>
-                    </div>
+                    
 
                 )
             })}

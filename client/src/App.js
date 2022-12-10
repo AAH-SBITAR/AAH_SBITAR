@@ -1,10 +1,13 @@
+
 import React, { Component } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import "./components/home.css"
-import AuthService from "./services/auth.service";
 
+// This is the root container for our application.
+
+import AuthService from "./services/auth.service";
 import Login from "./components/login.component";
 import Register from "./components/register.component";
 import Home from "./components/home.component";
@@ -15,7 +18,11 @@ import BoardUser from "./components/Board-User";
 import Receptionist from "./components/Board-Receptionist";
 import Doctor from "./components/Board-Doctor";
 import Profile_Doctor from "./components/Profile_Doctor.jsx";
+import Update_Patient from "./components/Update_Patient.js";
 
+//add a navigation bar in App component.
+
+//The navbar dynamically changes by login status and current User’s roles.
 
 class App extends Component {
   constructor(props) {
@@ -60,20 +67,21 @@ class App extends Component {
             AAH_Sbitar
           </Link>
           <div className="navbar-nav mr-auto">
+          {!showDoctorBoard && !showReceptionistBoard &&(
             <li className="nav-item">
               <Link to={"/home"} className="nav-link">
                 Home
               </Link>
             </li>
-
-            {!showDoctorBoard && !showReceptionistBoard && (
-              <li className="nav-item">
-                <Link to={"/aboutUs"} className="nav-link">
-                  AboutUs
-                </Link>
-              </li>
+           )}
+            {!showDoctorBoard && !showReceptionistBoard &&(
+            <li className="nav-item">
+              <Link to={"/aboutUs"} className="nav-link">
+                AboutUs
+              </Link>
+            </li>
             )}
-
+            
             {!showDoctorBoard && (
               <li className="nav-item">
                 <Link to={"/doctors"} className="nav-link">
@@ -85,7 +93,7 @@ class App extends Component {
             {showReceptionistBoard && (
               <li className="nav-item">
                 <Link to={"/recept"} className="nav-link">
-                  Receptinonist
+                Receptionist Board
                 </Link>
               </li>
             )}
@@ -93,12 +101,12 @@ class App extends Component {
             {showDoctorBoard && (
               <li className="nav-item">
                 <Link to={"/doct"} className="nav-link">
-                  Doctor
+                  Doctor Board
                 </Link>
               </li>
             )}
 
-            {currentUser && (
+            {!currentUser &&(
               <li className="nav-item">
                 <Link to={"/user"} className="nav-link">
                   User
@@ -162,6 +170,7 @@ class App extends Component {
             <Route path="/user" element={<BoardUser />} />
             <Route path="/recept" element={<Receptionist />} />
             <Route path="/doct" element={<Doctor />} />
+            <Route path="/:id" element={<Update_Patient />} />
           </Routes>
         </div>
       </div>

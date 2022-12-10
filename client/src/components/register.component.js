@@ -3,7 +3,7 @@ import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
 import { isEmail } from "validator";
-
+//We’re gonna call AuthService.
 import AuthService from "../services/auth.service";
 
 
@@ -46,7 +46,7 @@ const vpassword = value => {
     );
   }
 };
-
+//register() method and show response message (successful or error).
 export default class Register extends Component {
   constructor(props) {
     super(props);

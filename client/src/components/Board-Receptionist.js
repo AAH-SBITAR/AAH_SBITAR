@@ -3,7 +3,8 @@ import AddPatient from "./AddPatient";
 import OnePatientSearched from "./OnePatientSearched";
 import PatientList from "./PatientList";
 import Search from "./Search";
-
+// Board-Receptionist, component will be displayed by state user.roles. 
+//In this component, we use user.service to access protected resources from Web API.
 
 function Receptionist() {
   const [view, setView] = useState("patients");
@@ -17,7 +18,7 @@ function Receptionist() {
             setView("patients");
           }}
         >
-          Receptionist Board
+          Patients
         </p>
         <div>
           <ul className="navbar-nav">
