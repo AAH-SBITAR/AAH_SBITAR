@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import "./home.css"
 import UserService from "../services/user.service";
 
+// Home component is public page that shows all about hospital and all doctors.
+//People don’t need to log in to view this page.
+
 function Home() {
   const [content, setContent] = useState("")
   const [search, setSearch] = useState("")

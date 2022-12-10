@@ -3,6 +3,7 @@ import axios from "axios";
 import AuthService from "../services/auth.service";
 import Update_Doctor from "./Update_Doctor";
 
+// this component displays doctor information after the login action is successful.
 
 var Doctor = () => {
   const [doctor, setDoctor] = useState({});

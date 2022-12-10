@@ -2,6 +2,9 @@ import React, { Component } from "react";
 
 import UserService from "../services/user.service";
 
+// BoardUser component will be displayed by state user.roles. 
+// In this component, we use user.service to access protected resources from Web API.
+
 export default class BoardUser extends Component {
   constructor(props) {
     super(props);

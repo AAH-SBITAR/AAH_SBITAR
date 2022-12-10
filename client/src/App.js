@@ -1,10 +1,13 @@
+
 import React, { Component } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import "./components/home.css"
-import AuthService from "./services/auth.service";
 
+// This is the root container for our application.
+
+import AuthService from "./services/auth.service";
 import Login from "./components/login.component";
 import Register from "./components/register.component";
 import Home from "./components/home.component";
@@ -16,6 +19,9 @@ import Receptionist from "./components/Board-Receptionist";
 import Doctor from "./components/Board-Doctor";
 import Profile_Doctor from "./components/Profile_Doctor.jsx";
 
+//add a navigation bar in App component.
+
+//The navbar dynamically changes by login status and current User’s roles.
 
 class App extends Component {
   constructor(props) {
