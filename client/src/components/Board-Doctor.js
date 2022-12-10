@@ -1,27 +1,13 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useState } from "react";
+import AddPatient from "./AddPatient";
+import OnePatientSearched from "./OnePatientSearched";
+import PatientList from "./PatientList";
 import Search from "./Search";
 
 
-function Doctor() {
-  const [check, setCheck] = useState(false)
+function BoardDoctor() {
   const [view, setView] = useState("patients");
-  const [CIN, setCIN] = useState({});
-  console.log(CIN);
-  let Search = (e) => {
-    e.preventDefault()
-    fetch (`/patient/getOne/${CIN}`)
-      .then((response) => {
-        return response.json()
-
-      }
-      )
-      .then(data => console.log(data))
-    
-      .catch(err => console.error(err))
-
-    }
- 
+  const [onePatient, setOnePatient] = useState({});
   return (
     <div>
       <nav className="navbar navbar-light bg-light justify-content-between">
@@ -31,31 +17,40 @@ function Doctor() {
             setView("patients");
           }}
         >
-          Doctor Board
+          Patients
         </p>
-
-
-        <form className="form-inline">
-          <input onChange={(event) => setCIN(event.target.value)}
-            className="form-control mr-sm-2"
-            type="search"
-            placeholder="Search for a Patient by ID"
-            aria-label="Search"
-          />
-          <button onClick={(e) => { Search(e) }}
-            className="btn btn-outline-success my-2 my-sm-0"
-            type="submit"
-          >
-            Search
-          </button>
-        </form>
+       
+        <div>
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <p
+                className="nav-link"
+                onClick={() => {
+                  setView("search");
+                }}
+              >
+                Search Patient
+              </p>
+            </li>
+          </ul>
+        </div>
       </nav>
-
-
-
-      {view === "search" && <Search />}
+      <div
+        className="border blur"
+        style={{
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        {view === "patients" && (
+          <PatientList setView={setView} setOnePatient={setOnePatient} />
+        )}
+        {view === "add" && <AddPatient />}
+        {view === "search" && <Search />}
+        {view === "one" && <OnePatientSearched onePatient={onePatient} />}
+      </div>
     </div>
   );
 }
 
-export default Doctor;
+export default BoardDoctor;
