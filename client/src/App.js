@@ -54,35 +54,34 @@ class App extends Component {
     const { currentUser, showReceptionistBoard, showDoctorBoard } = this.state;
 
     return (
-      <div className="home"style={{ height: "100%" }}>
+      <div className="home" style={{ height: "100%" }}>
         <nav className="navbar navbar-expand navbar-dark bg-dark">
           <Link to={"/"} className="navbar-brand">
             AAH_Sbitar
           </Link>
           <div className="navbar-nav mr-auto">
             <li className="nav-item">
-              <Link to={"/home"} className="nav-link" >
+              <Link to={"/home"} className="nav-link">
                 Home
               </Link>
             </li>
-           
-            {!showDoctorBoard && !showReceptionistBoard &&(
-            <li className="nav-item">
-              <Link to={"/aboutUs"} className="nav-link">
-                AboutUs
-              </Link>
-            </li>
+
+            {!showDoctorBoard && !showReceptionistBoard && (
+              <li className="nav-item">
+                <Link to={"/aboutUs"} className="nav-link">
+                  AboutUs
+                </Link>
+              </li>
             )}
 
             {!showDoctorBoard && (
-            <li className="nav-item">
-              <Link to={"/doctors"} className="nav-link">
-                Doctors
-              </Link>
-            </li>
-            )}  
-            
-      
+              <li className="nav-item">
+                <Link to={"/doctors"} className="nav-link">
+                  Doctors
+                </Link>
+              </li>
+            )}
+
             {showReceptionistBoard && (
               <li className="nav-item">
                 <Link to={"/recept"} className="nav-link">
@@ -107,13 +106,25 @@ class App extends Component {
               </li>
             )}
           </div>
-
-          
-          {currentUser ? (
-            <div className="navbar-nav ml-auto" >
-              <li className="nav-item" >
+          {currentUser && currentUser.roles == "DOCTOR" ? (
+            <div className="navbar-nav ml-auto">
+              <li className="nav-item">
                 <Link to={"/profile"} className="nav-link">
-                  WELCOME {currentUser.roles} {currentUser.username}
+                  Welcome Dr.
+                </Link>
+              </li>
+            </div>
+          ) : (
+            <div className="navbar-nav ml-auto">
+              <li className="nav-item nav-link">Welcome</li>
+            </div>
+          )}
+
+          {currentUser ? (
+            <div className="navbar-nav ml-auto">
+              <li className="nav-item">
+                <Link to={"/profile"} className="nav-link">
+                  {currentUser.username}
                 </Link>
               </li>
               <li className="nav-item">
@@ -143,8 +154,8 @@ class App extends Component {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
-            <Route path="/aboutUs" element={<AboutUs/>} />
-            <Route path="/doctors" element={<AllDoctors/>}/>
+            <Route path="/aboutUs" element={<AboutUs />} />
+            <Route path="/doctors" element={<AllDoctors />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/profile" element={<Profile_Doctor />} />

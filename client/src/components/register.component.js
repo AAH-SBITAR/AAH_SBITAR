@@ -6,6 +6,7 @@ import { isEmail } from "validator";
 
 import AuthService from "../services/auth.service";
 
+
 const required = value => {
   if (!value) {
     return (
@@ -35,15 +36,6 @@ const vusername = value => {
     );
   }
 };
-// const vrole = value => {
-//   if (value.length < 3 || value.length > 20) {
-//     return (
-//       <div className="alert alert-danger" role="alert">
-//         This is not a valid role.
-//       </div>
-//     );
-//   }
-// };
 
 const vpassword = value => {
   if (value.length < 6 || value.length > 40) {

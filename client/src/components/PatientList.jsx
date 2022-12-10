@@ -9,11 +9,17 @@ function PatientList({ setView, setOnePatient  }) {
   useEffect(() => {
     getAll();
     console.log(data);
-  }, []);
+  },[]);
 
   let getAll = () => {
     axios.get("http://localhost:3000/patient/getAll").then((req) => {
-      setData(req.data);
+      // filter the data to show only patients who have appointement today
+      let arr = req.data.filter((e) => {
+let currentTime = new Date().toISOString().split("T")[0];
+        return e.nextRDV_2 === currentTime;
+      });
+
+      setData(arr);
       console.log(req.data);
     });
   };
