@@ -6,6 +6,8 @@ const Role = db.role;
 var jwt = require("jsonwebtoken");
 var bcrypt = require("bcryptjs");
 
+// signup: create new User in database (role is user if not specifying role)
+
 exports.signup = (req, res) => {
   const user = new User({
     username: req.body.username,
@@ -66,6 +68,9 @@ exports.signup = (req, res) => {
   });
 };
 
+//- signin:
+//find username of the request in database, if it exists
+
 exports.signin = (req, res) => {
   User.findOne({
     username: req.body.username,
@@ -81,6 +86,7 @@ exports.signin = (req, res) => {
         return res.status(404).send({ message: "User Not found." });
       }
 
+//compare password with password in database using bcrypt, if it is correct
       var passwordIsValid = bcrypt.compareSync(
         req.body.password,
         user.password
@@ -92,6 +98,9 @@ exports.signin = (req, res) => {
           message: "Invalid Password!",
         });
       }
+
+//generate a token using jsonwebtoken
+//return user information & access Token
 
       var token = jwt.sign({ id: user.id }, config.secret, {
         expiresIn: 86400, // 24 hours
