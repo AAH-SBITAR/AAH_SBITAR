@@ -17,7 +17,7 @@ function BoardDoctor() {
             setView("patients");
           }}
         >
-          Doctor Board
+          Patients
         </p>
        
         <div>
