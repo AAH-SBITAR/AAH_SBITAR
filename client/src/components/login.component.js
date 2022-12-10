@@ -63,7 +63,7 @@ class Login extends Component {
 
     this.form.validateAll();
     
-– //We’re gonna verify username and password as required field.
+ //We’re gonna verify username and password as required field.
 //If the verification is ok, we call AuthService.
 //login() method, then direct user to Profile page: this.props.router.navigate("/profile");, 
 //or show message with response error.
