@@ -67,21 +67,21 @@ class App extends Component {
             AAH_Sbitar
           </Link>
           <div className="navbar-nav mr-auto">
-          {!showDoctorBoard && !showReceptionistBoard &&(
-            <li className="nav-item">
-              <Link to={"/home"} className="nav-link">
-                Home
-              </Link>
-            </li>
-           )}
-            {!showDoctorBoard && !showReceptionistBoard &&(
-            <li className="nav-item">
-              <Link to={"/aboutUs"} className="nav-link">
-                AboutUs
-              </Link>
-            </li>
+            {!showDoctorBoard && !showReceptionistBoard && (
+              <li className="nav-item">
+                <Link to={"/home"} className="nav-link">
+                  Home
+                </Link>
+              </li>
             )}
-            
+            {!showDoctorBoard && !showReceptionistBoard && (
+              <li className="nav-item">
+                <Link to={"/aboutUs"} className="nav-link">
+                  AboutUs
+                </Link>
+              </li>
+            )}
+
             {!showDoctorBoard && (
               <li className="nav-item">
                 <Link to={"/doctors"} className="nav-link">
@@ -93,7 +93,7 @@ class App extends Component {
             {showReceptionistBoard && (
               <li className="nav-item">
                 <Link to={"/recept"} className="nav-link">
-                Receptionist Board
+                  Receptionist Board
                 </Link>
               </li>
             )}
@@ -106,7 +106,7 @@ class App extends Component {
               </li>
             )}
 
-            {!currentUser &&(
+            {!currentUser && (
               <li className="nav-item">
                 <Link to={"/user"} className="nav-link">
                   User
@@ -114,7 +114,7 @@ class App extends Component {
               </li>
             )}
           </div>
-          {currentUser && currentUser.roles == "DOCTOR" ? (
+          {currentUser && showDoctorBoard ? (
             <div className="navbar-nav ml-auto">
               <li className="nav-item">
                 <Link to={"/profile"} className="nav-link">

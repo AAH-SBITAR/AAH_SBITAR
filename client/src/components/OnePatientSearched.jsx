@@ -154,7 +154,7 @@ function OnePatientSearched({ onePatient }) {
        
  </form>
       
-        {user=="DOCTOR"&&(<button className="but_update" onClick={()=>setUp(!up)}>Update</button>)} <br></br></div> )}
+        {user && user.roles =="DOCTOR"  && (<button className="but_update" onClick={()=>setUp(!up)}>Update</button>)} <br></br></div> )}
         {up && <Update_Patient onePatient={onePatient} setUp={setUp} />}
       
     </div>
