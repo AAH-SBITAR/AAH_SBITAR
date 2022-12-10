@@ -17,7 +17,7 @@ function Receptionist() {
             setView("patients");
           }}
         >
-          Receptionist Board
+          Patients
         </p>
         <div>
           <ul className="navbar-nav">
