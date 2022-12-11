@@ -9,7 +9,7 @@ import AuthService from "../services/auth.service";
   const user = AuthService.getCurrentUser();
 
 
-function Update_Doctor({doctor , setUp}) {
+function UpdateDoctor({doctor , setUp}) {
     const [form, setForm] = useState({});
     const [data, setData] = useState({});
 
@@ -64,4 +64,4 @@ function Update_Doctor({doctor , setUp}) {
     )
 }
 
-export default Update_Doctor
+export default UpdateDoctor
