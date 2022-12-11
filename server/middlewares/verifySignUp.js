@@ -2,6 +2,9 @@ const db = require("../models");
 const ROLES = db.ROLES;
 const User = db.user;
 
+ //check duplications for username and email
+ 
+
 checkDuplicateUsernameOrEmail = (req, res, next) => {
   // Username
   User.findOne({
@@ -35,6 +38,8 @@ checkDuplicateUsernameOrEmail = (req, res, next) => {
     });
   });
 };
+
+//check if roles in the request is legal or not
 
 checkRolesExisted = (req, res, next) => {
   if (req.body.roles) {

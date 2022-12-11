@@ -3,8 +3,9 @@ import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
 import { isEmail } from "validator";
-
+//We’re gonna call AuthService.
 import AuthService from "../services/auth.service";
+
 
 const required = value => {
   if (!value) {
@@ -35,15 +36,6 @@ const vusername = value => {
     );
   }
 };
-// const vrole = value => {
-//   if (value.length < 3 || value.length > 20) {
-//     return (
-//       <div className="alert alert-danger" role="alert">
-//         This is not a valid role.
-//       </div>
-//     );
-//   }
-// };
 
 const vpassword = value => {
   if (value.length < 6 || value.length > 40) {
@@ -54,7 +46,7 @@ const vpassword = value => {
     );
   }
 };
-
+//register() method and show response message (successful or error).
 export default class Register extends Component {
   constructor(props) {
     super(props);
@@ -143,7 +135,7 @@ export default class Register extends Component {
   render() {
     return (
       <div className="col-md-12">
-        <div className="card card-container">
+        <div className="card1 card-container">
           <img
             src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
             alt="profile-img"

@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useState } from 'react'
 
 
-function Update_Patient({onePatient , setUp}) {
+function UpdatePatient({onePatient , setUp}) {
 
     const Line = () => <hr />;
 
@@ -110,13 +110,12 @@ function Update_Patient({onePatient , setUp}) {
                   />
                 </div>
                 <div class="col-md-6">
-                  <label for="inputEmail4" class="form-label">
+                  <label  class="form-label">
                     medical Tests
                   </label>
                   <input
-                    type="email"
+                    type="text"
                     class="form-control"
-                    id="inputEmail4"
                     name="tests"
                     onChange={onchangeHandler}
                     defaultValue={onePatient.tests}
@@ -129,10 +128,10 @@ function Update_Patient({onePatient , setUp}) {
                     type="text"
                     class="form-control"
                     placeholder=""
-                    aria-label="note"
-                    name="note"
+                    aria-label="notes"
+                    name="notes"
                     onChange={onchangeHandler}
-                    defaultValue={onePatient.note}
+                    defaultValue={onePatient.notes}
                     
                   />
                 </div>
@@ -208,4 +207,4 @@ function Update_Patient({onePatient , setUp}) {
   );
 }
 
-export default Update_Patient
+export default UpdatePatient

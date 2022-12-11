@@ -18,6 +18,12 @@ function Search() {
     }
     return (
       <div
+        style={{
+          display: 'flex',
+          alignItems: "center",
+          justifyContent: "center",
+        height : "100vh"
+        }}
 
       >
             
@@ -33,7 +39,7 @@ function Search() {
             }}
           />
           <button
-            className="btn btn-outline-primary"
+            className="btn btn-primary"
             type="submit"
             onClick={(e) => searchFunction(e)}
           >

@@ -1,4 +1,8 @@
 import React, { Component } from "react";
+
+// we need a library for Form validation, 
+//so we’re gonna add react-validation library to our project.
+
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
@@ -6,6 +10,8 @@ import CheckButton from "react-validation/build/button";
 import AuthService from "../services/auth.service";
 
 import { withRouter } from '../common/with-router';
+
+//We also use isEmail() function from validator to verify email.
 
 const required = value => {
   if (!value) {
@@ -51,8 +57,16 @@ class Login extends Component {
       message: "",
       loading: true
     });
+    
+    //We’re gonna call Form validateAll() method to check validation functions in validations. Then CheckButton helps us to verify if the form validation is successful or not.
+    // So this button will not display on the form.
 
     this.form.validateAll();
+    
+ //We’re gonna verify username and password as required field.
+//If the verification is ok, we call AuthService.
+//login() method, then direct user to Profile page: this.props.router.navigate("/profile");, 
+//or show message with response error.
 
     if (this.checkBtn.context._errors.length === 0) {
       AuthService.login(this.state.username, this.state.password).then(
@@ -80,11 +94,12 @@ class Login extends Component {
       });
     }
   }
+// This is how we put them in render() method with validations attribute:
 
   render() {
     return (
       <div className="col-md-12">
-        <div className="card card-container">
+        <div className="card1 card-container">
           <img
             src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
             alt="profile-img"
