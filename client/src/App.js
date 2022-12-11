@@ -1,9 +1,8 @@
-
 import React, { Component } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import "./components/home.css"
+import "./components/home.css";
 
 // This is the root container for our application.
 
@@ -17,8 +16,8 @@ import Profile from "./components/profile.component";
 import BoardUser from "./components/Board-User";
 import Receptionist from "./components/Board-Receptionist";
 import Doctor from "./components/Board-Doctor";
-import Profile_Doctor from "./components/Profile_Doctor.jsx";
-import Update_Patient from "./components/Update_Patient.js";
+import Profile_Doctor from "./components/ProfileDoctor.jsx";
+import UpdatePatient from "./components/UpdatePatient.js";
 
 //add a navigation bar in App component.
 
@@ -170,7 +169,7 @@ class App extends Component {
             <Route path="/user" element={<BoardUser />} />
             <Route path="/recept" element={<Receptionist />} />
             <Route path="/doct" element={<Doctor />} />
-            <Route path="/:id" element={<Update_Patient />} />
+            <Route path="/:id" element={<UpdatePatient />} />
           </Routes>
         </div>
       </div>
@@ -179,5 +178,3 @@ class App extends Component {
 }
 
 export default App;
-
-

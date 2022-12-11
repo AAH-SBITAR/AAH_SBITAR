@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import AuthService from "../services/auth.service";
-import Update_Doctor from "./Update_Doctor";
+import UpdateDoctor from "./UpdateDoctor";
 
 // this component displays doctor information after the login action is successful.
 
@@ -41,7 +41,7 @@ var Doctor = () => {
 
      </ul>
      <button className="but_update" onClick={()=>setUp(!up)}>Update</button> <br></br></div> )}
-    {up && <Update_Doctor doctor={doctor} setUp={setUp} />}
+    {up && <UpdateDoctor doctor={doctor} setUp={setUp} />}
    <br/>
     </div>
   );
