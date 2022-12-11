@@ -4,6 +4,8 @@ import OnePatientSearched from "./OnePatientSearched";
 import PatientList from "./PatientList";
 import Search from "./Search";
 
+// Board-Doctor component will be displayed by state user.roles.
+// In this component, we use user.service to access protected resources from Web API.
 
 function BoardDoctor() {
   const [view, setView] = useState("patients");
@@ -17,7 +19,7 @@ function BoardDoctor() {
             setView("patients");
           }}
         >
-          Doctor Board
+          Patients
         </p>
        
         <div>

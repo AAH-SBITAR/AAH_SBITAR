@@ -29,6 +29,7 @@ function AddPatient() {
       })
       .then((response) => {
         alert(response.data.message);
+                window.location.reload(false);
       })
       .catch((err) => {
         console.log(err);

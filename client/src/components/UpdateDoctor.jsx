@@ -1,20 +1,15 @@
-// import React from 'react'
 
-// function Update_Doctor() {
-
-
-//   return (
-//     <div>Update_Doctor</div>
-//   )
-// }
-
-// export default Update_Doctor
 
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 
-function Update_Doctor({doctor , setUp}) {
+import AuthService from "../services/auth.service";
+
+  const user = AuthService.getCurrentUser();
+
+
+function UpdateDoctor({doctor , setUp}) {
     const [form, setForm] = useState({});
     const [data, setData] = useState({});
 
@@ -51,10 +46,10 @@ function Update_Doctor({doctor , setUp}) {
                     <label for="phone">Phone:</label>
                     <input type="text" class="form-control" name="phone" placeholder="Enter your phone number" onChange={onchangeHandler} defaultValue={doctor.phone} />
                 </div>
-                <div class="form-group">
+             { user && user.roles=="DOCTOR" &&  <div class="form-group">
                     <label for="speciality">Speciality:</label>
                     <input type="text" class="form-control" name="speciality" placeholder="Enter your  speciality " onChange={onchangeHandler} defaultValue={doctor.speciality} />
-                </div>
+                </div>}
        
                
                 <div class="form-group">
@@ -69,4 +64,4 @@ function Update_Doctor({doctor , setUp}) {
     )
 }
 
-export default Update_Doctor
+export default UpdateDoctor
