@@ -108,12 +108,12 @@ class App extends Component {
             {!currentUser && (
               <li className="nav-item">
                 <Link to={"/user"} className="nav-link">
-                  User
+                  Patient
                 </Link>
               </li>
             )}
           </div>
-          {currentUser && showDoctorBoard ? (
+          {currentUser && showDoctorBoard && (
             <div className="navbar-nav ml-auto">
               <li className="nav-item">
                 <Link to={"/profile"} className="nav-link">
@@ -121,11 +121,7 @@ class App extends Component {
                 </Link>
               </li>
             </div>
-          ) : (
-            <div className="navbar-nav ml-auto">
-              <li className="nav-item nav-link">Welcome</li>
-            </div>
-          )}
+          ) }
 
           {currentUser ? (
             <div className="navbar-nav ml-auto">

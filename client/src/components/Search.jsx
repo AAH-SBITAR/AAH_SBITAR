@@ -39,7 +39,7 @@ function Search() {
             }}
           />
           <button
-            className="btn btn-outline-primary"
+            className="btn btn-primary"
             type="submit"
             onClick={(e) => searchFunction(e)}
           >
