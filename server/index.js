@@ -124,6 +124,7 @@ function initial() {
     }
   });
 }
+
 // app.get("/allPat", async (req, res) => {
 //   try {
 //     let data = await Patient.find();
