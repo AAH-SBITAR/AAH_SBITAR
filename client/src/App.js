@@ -113,18 +113,15 @@ class App extends Component {
               </li>
             )}
           </div>
-          {currentUser && showDoctorBoard && (
-            <div className="navbar-nav ml-auto">
-              <li className="nav-item">
-                <Link to={"/profile"} className="nav-link">
-                  Welcome Dr.
-                </Link>
-              </li>
-            </div>
-          ) }
 
           {currentUser ? (
             <div className="navbar-nav ml-auto">
+              {showDoctorBoard && (
+                <li className="nav-item nav-link">Welcome Dr.</li>
+              )}
+              {showReceptionistBoard && (
+                <li className="nav-item nav-link">Welcome </li>
+              )}
               <li className="nav-item">
                 <Link to={"/profile"} className="nav-link">
                   {currentUser.username}

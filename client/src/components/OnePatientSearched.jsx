@@ -22,7 +22,7 @@ function OnePatientSearched({ onePatient }) {
 
   return (
     <div>
-      <br />  
+      <br />
       <br />
       <br />
       <br />
@@ -58,7 +58,7 @@ function OnePatientSearched({ onePatient }) {
                     <Line />
 
                     <div className="col-md-6">
-                      <label className="form-label">age </label>
+                      <label className="form-label"> * age </label>
                       <input
                         type="text"
                         className="form-control"
@@ -69,7 +69,7 @@ function OnePatientSearched({ onePatient }) {
                       />
                     </div>
                     <div className="col-md-6">
-                      <label className="form-label">Phone number *</label>
+                      <label className="form-label"> * Phone number </label>
                       <input
                         type="text"
                         className="form-control"
@@ -78,7 +78,7 @@ function OnePatientSearched({ onePatient }) {
                       />
                     </div>
                     <div className="col-md-6">
-                      <label className="form-label">Medicaments</label>
+                      <label className="form-label"> * Medicaments</label>
                       <input
                         type="text"
                         className="form-control"
@@ -87,7 +87,7 @@ function OnePatientSearched({ onePatient }) {
                       />
                     </div>
                     <div className="col-md-6">
-                      <label className="form-label">medical Tests</label>
+                      <label className="form-label"> * medical Tests</label>
                       <input
                         type="text"
                         className="form-control"
@@ -96,18 +96,30 @@ function OnePatientSearched({ onePatient }) {
                       />
                     </div>
                     <div className="col-md-6">
-                      <label className="form-label">Note </label>
+                      <label className="form-label"> * Note </label>
                       <input
                         type="text"
                         className="form-control"
                         placeholder=""
-                        aria-label="Phone number"
+                        aria-label="notes"
                         value={onePatient.notes}
                         disabled
                       />
                     </div>
+
                     <div className="col-md-6">
-                      <label className="form-label">chronic desease </label>
+                      <label className="form-label"> * next appointement </label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder=""
+                        aria-label=""
+                        value={onePatient.nextRDV_2}
+                        disabled
+                      />
+                    </div>
+                    <div className="col-md-6">
+                      <label className="form-label">* chronic desease </label>
                       {onePatient.diabete && (
                         <input
                           type="text"

@@ -16,7 +16,7 @@ exports.getAllPatient = async (req, res) => {
 exports.addPatient = async (req, res) => {
   try {
     await Patient.create(req.body);
-    res.json({message:`${req.body.username} added successfuly` });
+    res.json({message:`${req.body.name} added successfuly` });
   } catch (error) {
     res.status(400).json({ message: "something went wrong" });
     console.log(error);
