@@ -5,7 +5,7 @@ import axios from 'axios';
 import "./doctors.css";
 function AllDoctors() {
     const [data, setData] = useState([])
-    let [role, setRole] = useState("")
+    // let [role, setRole] = useState("")
     useEffect(() => {
         axios.get("http://localhost:3000/getAll").then(
             (req) => {
@@ -29,11 +29,11 @@ function AllDoctors() {
 
                 return (
                     <div className='card1' >
-                        <div class="row g-2">
-                            <div class="col-md-3 ">
+                        <div class="">
+                            <div class=" ">
                                 <div class=" p-2 py-3 text-center ">
                                     <div class="img mb-2">
-                                        <img src={e.image}width="70" class="rounded-circle" />
+                                        <img src={e.image}width="120" height="120" class="rounded-circle" alt='doc img'/>
                                     </div>
                                     <h5 class="mb-0">{e.username}</h5>
                                     <br/>
