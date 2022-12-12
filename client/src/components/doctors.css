@@ -34,7 +34,16 @@ body{
     padding: 20px 40px 20px 40px;
    
 }
+.holder{
+  margin: 10px 10px;
+  margin-left: 30px;
+  padding: 10px 10px 10px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 
+}
 .card:hover{
 
    -webkit-box-shadow: 3px 5px 17px -4px #777777; 

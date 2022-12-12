@@ -5,7 +5,7 @@ import axios from 'axios';
 import "./doctors.css";
 function AllDoctors() {
     const [data, setData] = useState([])
-    let [role, setRole] = useState("")
+    // let [role, setRole] = useState("")
     useEffect(() => {
         axios.get("http://localhost:3000/getAll").then(
             (req) => {
@@ -19,62 +19,47 @@ function AllDoctors() {
 
 
     return (
-        <div class="container mt-5 mb-5 ">
+       <div>
+        <h2>Doctors</h2>
+        <div class=" holder container mt-5 mb-5" >
             <div class="d-flex justify-content-between mb-3 ">
-
-                <h2>Doctors</h2>
-
 
             </div>
             {data.map((e) => {
 
                 return (
-
-                  
-
-                        <div class="row g-2">
-
-                            <div class="col-md-3 ">
-
-                                <div class="card p-2 py-3 text-center ">
-
+                    <div className='card1' >
+                        <div class="">
+                            <div class=" ">
+                                <div class=" p-2 py-3 text-center ">
                                     <div class="img mb-2">
-
-                                        <img src={e.image}width="70" class="rounded-circle" />
-
+                                        <img src={e.image}width="120" height="120" class="rounded-circle" alt='doc img'/>
                                     </div>
-
-                                    <h5 class="mb-0">{e.username}</h5><br/>
+                                    <h5 class="mb-0">{e.username}</h5>
+                                    <br/>
                                     <small >{e.speciality}</small>
-                                    
-
                                     <div class="ratings mt-2">
-
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
-
                                     </div>
-
+                                    
                                     <div class="mt-4 apointment">
-
-                                        <button class="btn text-uppercase">
+                                        <button class="btn btn-primary">
                                         <a href="mailto:abc@example.com?subject = Feedback&body = Message">
                                             Book Appointment
                                         </a></button>
                                     </div>
-
                                 </div>
-
                             </div>
-
                         </div>
-                    
+                        </div>
 
                 )
             })}
         </div>
+        </div> 
     )
 }
 
