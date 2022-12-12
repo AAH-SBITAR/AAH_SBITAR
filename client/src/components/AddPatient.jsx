@@ -78,7 +78,7 @@ function AddPatient() {
             <input
               type="text"
               className="form-control"
-              name="number"
+              name="phone"
               placeholder="patient number"
               onChange={onchangeHandler}
             />
