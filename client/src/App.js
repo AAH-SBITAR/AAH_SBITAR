@@ -63,7 +63,13 @@ class App extends Component {
       <div className="home" style={{ height: "100%" }}>
         <nav className="navbar navbar-expand navbar-dark bg-dark">
           <Link to={"/"} className="navbar-brand">
-            AAH_Sbitar
+<img
+  src="/icon.png"
+  alt="Logo"
+  style={{ maxHeight: "40px", marginRight: "10px" }}
+/>
+            Sbitar
+            
           </Link>
           <div className="navbar-nav mr-auto">
             {!showDoctorBoard && !showReceptionistBoard && (

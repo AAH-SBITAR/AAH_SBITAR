@@ -3,6 +3,8 @@ import AddPatient from "./AddPatient";
 import OnePatientSearched from "./OnePatientSearched";
 import PatientList from "./PatientList";
 import Search from "./Search";
+import "./home.css";
+
 // Board-Receptionist, component will be displayed by state user.roles. 
 //In this component, we use user.service to access protected resources from Web API.
 

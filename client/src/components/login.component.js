@@ -10,6 +10,7 @@ import CheckButton from "react-validation/build/button";
 import AuthService from "../services/auth.service";
 
 import { withRouter } from '../common/with-router';
+import "./home.css";
 
 //We also use isEmail() function from validator to verify email.
 
@@ -113,7 +114,7 @@ class Login extends Component {
             }}
           >
             <div className="form-group">
-              <label htmlFor="username">Username</label>
+              <label htmlFor="username">Email (Username)</label>
               <Input
                 type="text"
                 className="form-control"

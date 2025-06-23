@@ -3,6 +3,9 @@ import AddPatient from "./AddPatient";
 import OnePatientSearched from "./OnePatientSearched";
 import PatientList from "./PatientList";
 import Search from "./Search";
+import AllPatientList from "./AllPatientList";
+import "./home.css";
+
 
 // Board-Doctor component will be displayed by state user.roles.
 // In this component, we use user.service to access protected resources from Web API.
@@ -19,7 +22,15 @@ function BoardDoctor() {
             setView("patients");
           }}
         >
-          Patients
+          Patients RDV Todday
+        </p>
+        <p
+          className="navbar-brand"
+          onClick={() => {
+            setView("Allpatients");
+          }}
+        >
+         All Patients
         </p>
        
         <div>
@@ -45,7 +56,10 @@ function BoardDoctor() {
         }}
       >
         {view === "patients" && (
-          <PatientList setView={setView} setOnePatient={setOnePatient} />
+          <PatientList  setView={setView} setOnePatient={setOnePatient} /> 
+        )}
+         {view === "Allpatients" && (
+          <AllPatientList  setView={setView} setOnePatient={setOnePatient} />
         )}
         {view === "add" && <AddPatient />}
         {view === "search" && <Search />}

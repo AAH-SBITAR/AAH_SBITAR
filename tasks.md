@@ -14,7 +14,7 @@
 
 - as agent i want to add
 
-* add patient
+* add patient"
 * show all patients
 * get one patient by id
 * get one user (doctor) by name

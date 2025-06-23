@@ -1,6 +1,8 @@
 import axios from "axios";
 import React from "react";
 import { useState } from "react";
+import "./home.css";
+
 
 function AddPatient() {
   const [form, setForm] = useState({});

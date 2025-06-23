@@ -65,3 +65,83 @@ function UpdateDoctor({doctor , setUp}) {
 }
 
 export default UpdateDoctor
+
+
+
+
+// //chat gpt 
+
+// import React, { useState } from 'react';
+// import { useHistory } from 'react-router-dom';
+// import axios from 'axios';
+// import AuthService from "../services/auth.service";
+
+// const user = AuthService.getCurrentUser();
+
+// function UpdateDoctor({ doctor, setUp }) {
+//     const [form, setForm] = useState({
+//         username: doctor.username,
+//         phone: doctor.phone,
+//         speciality: doctor.speciality,
+//         image: doctor.image
+//     });
+//     // const history = useHistory();
+//     const [errors, setErrors] = useState({});
+
+//     const onchangeHandler = (e) => {
+//         setForm({
+//             ...form,
+//             [e.target.name]: e.target.value
+//         });
+//     }
+
+//     const submitHandler = (e) => {
+//         e.preventDefault();
+
+//         axios.put(`http://localhost:3000/updateDoctor/${doctor._id}`, form)
+//             .then(response => {
+//                 alert(response.data.message);
+//                 setUp();
+//                 // history.push('/profile'); // Redirect to profile page after successful update
+//             })
+//             .catch(err => {
+//                 if (err.response && err.response.data) {
+//                     setErrors(err.response.data.errors);
+//                 } else {
+//                     console.log(err);
+//                 }
+//             });
+//     }
+
+//     return (
+//         <div className="container">
+//             <form onSubmit={submitHandler}>
+//                 <div className="form-group">
+//                     <label htmlFor="name">Name:</label>
+//                     <input type="text" className="form-control" name="username" placeholder="Enter your Name" onChange={onchangeHandler} value={form.username} />
+//                     {errors.username && <span className="text-danger">{errors.username}</span>}
+//                 </div>
+//                 <div className="form-group">
+//                     <label htmlFor="phone">Phone:</label>
+//                     <input type="text" className="form-control" name="phone" placeholder="Enter your phone number" onChange={onchangeHandler} value={form.phone} />
+//                     {errors.phone && <span className="text-danger">{errors.phone}</span>}
+//                 </div>
+//                 {user && user.roles === "DOCTOR" && (
+//                     <div className="form-group">
+//                         <label htmlFor="speciality">Speciality:</label>
+//                         <input type="text" className="form-control" name="speciality" placeholder="Enter your speciality" onChange={onchangeHandler} value={form.speciality} />
+//                         {errors.speciality && <span className="text-danger">{errors.speciality}</span>}
+//                     </div>
+//                 )}
+//                 <div className="form-group">
+//                     <label htmlFor="image">Image:</label>
+//                     <input type="text" className="form-control" name="image" placeholder="Enter your movie image url" onChange={onchangeHandler} value={form.image} />
+//                     {errors.image && <span className="text-danger">{errors.image}</span>}
+//                 </div>
+//                 <button type="submit" className="btn btn-primary">Submit</button>
+//             </form>
+//         </div>
+//     );
+// }
+
+// export default UpdateDoctor;

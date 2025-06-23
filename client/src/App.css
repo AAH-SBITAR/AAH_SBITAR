@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -67,4 +67,253 @@ label {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
+} */
+
+
+
+/* Global Reset */
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* General Container Styling */
+.container {
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Card Styles */
+.card, .card1 {
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover, .card1:hover {
+  transform: translateY(-5px);
+}
+
+.card1 {
+  width: 300px;
+  height: auto;
+  text-align: center;
+}
+
+.card1 img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+/* Typography */
+p {
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+/* Button Styles */
+.button, .button1, .btn-custom {
+  border: none;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  text-align: center;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  margin: 0.5rem;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.button {
+  background-color: #007bff;
+}
+
+.button1 {
+  background-color: #dc3545;
+}
+
+.btn-custom {
+  background-color: #28a745;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+.button1:hover {
+  background-color: #a71d2a;
+}
+
+.btn-custom:hover {
+  background-color: #218838;
+}
+
+/* Search Form */
+form.search input[type=text] {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ced4da;
+  background: #fff;
+  border-radius: 4px 0 0 4px;
+  width: 70%;
+}
+
+form.search button {
+  padding: 0.5rem 1rem;
+  background: #28a745;
+  color: white;
+  font-size: 1rem;
+  border: 1px solid #28a745;
+  border-left: none;
+  cursor: pointer;
+  border-radius: 0 4px 4px 0;
+}
+
+form.search button:hover {
+  background: #218838;
+}
+
+/* Map Styling */
+.mapouter, .gmap_canvas, .gmap_iframe {
+  width: 100%;
+  height: 400px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* Profile & Doctor Card Styling */
+.PDoct_div {
+  background-color: rgba(223, 210, 210, 0.5);
+  border: 1px solid grey;
+  border-radius: 8px;
+  width: 350px;
+  height: auto;
+  margin: auto;
+  padding: 1rem;
+}
+
+.prof-image {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.spe {
+  font-weight: bold;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.but_update {
+  display: block;
+  background: #343a40;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  text-align: center;
+  margin: 1rem auto;
+  font-size: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease-in-out;
+}
+
+.but_update:hover {
+  transform: scale(1.05);
+}
+
+/* Auth Form Styling */
+.Auth-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.Auth-form {
+  width: 100%;
+  max-width: 420px;
+  padding: 2rem;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+.Auth-form-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.Auth-form-content {
+  padding: 1rem;
+}
+
+label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Home Page */
+.home {
+  margin: 0;
+  padding: 2rem;
+  border-radius: 6px;
+  background-color: #ffffff;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* Holder Utility */
+.holder {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.blur {
+  background-color: rgba(209, 227, 234, 0.5);
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(to right, #007bff, #6c757d);
+  color: white;
+  text-align: center;
+  padding: 3rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.hero p {
+  font-size: 1.25rem;
+}
+
+.hero .btn {
+  margin-top: 1rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }

@@ -5,6 +5,8 @@ import CheckButton from "react-validation/build/button";
 import { isEmail } from "validator";
 //We’re gonna call AuthService.
 import AuthService from "../services/auth.service";
+import "./home.css";
+
 
 
 const required = value => {
